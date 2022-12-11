@@ -16,7 +16,6 @@ public class GameOptions : MonoBehaviour
 
     private void AddPlayer()
     {
-        if (_playerNameInput == null) Debug.Log("NULL");
         if (players.Count < _possibleNumberOfPlayers && _playerNameInput.text.Length != 0)
             players.Add((players.Count, _playerNameInput.text));
     }

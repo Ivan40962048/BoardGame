@@ -45,18 +45,18 @@ public class DiceRoll : MonoBehaviour
     private int GetDiceValue()
     {
         var diceValue = 0;
-        if (Vector3.Dot (transform.forward, Vector3.up) > 0.6f)
-                diceValue = 4;
-        if (Vector3.Dot (-transform.forward, Vector3.up) > 0.6f)
-                diceValue = 3;
-        if (Vector3.Dot (transform.up, Vector3.up) > 0.6f)
-                diceValue = 6;
         if (Vector3.Dot (-transform.up, Vector3.up) > 0.6f)
-                diceValue = 1;
+            diceValue = 1;
         if (Vector3.Dot (transform.right, Vector3.up) > 0.6f)
-                diceValue = 2;
+            diceValue = 2;
+        if (Vector3.Dot (-transform.forward, Vector3.up) > 0.6f)
+            diceValue = 3;
+        if (Vector3.Dot (transform.forward, Vector3.up) > 0.6f)
+            diceValue = 4;
         if (Vector3.Dot (-transform.right, Vector3.up) > 0.6f)
-                diceValue = 5;
+            diceValue = 5;
+        if (Vector3.Dot (transform.up, Vector3.up) > 0.6f)
+            diceValue = 6;
         return DiceValue = diceValue;
     }
 }

@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     public int number;
     public PlayerMovement playerMovement;
     public bool isSelected;
-    public bool needSkeepMove;
+    public bool needSkipMove;
     public int debuff;
     public string nickName;
 

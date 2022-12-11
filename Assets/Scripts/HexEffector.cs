@@ -16,7 +16,7 @@ public class HexEffector : MonoBehaviour
         OnWater += (player, playersStatistic) => 
         {
             playersStatistic.statistic[player.nickName].Score += 5;
-            player.needSkeepMove = true;
+            player.needSkipMove = true;
         };
         OnPasture += (player, playersStatistic) => playersStatistic.statistic[player.nickName].Score += DiceRoll.DiceValue;
         OnLake += (player, playersStatistic) => 

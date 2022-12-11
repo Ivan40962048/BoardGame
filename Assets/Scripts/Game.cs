@@ -45,10 +45,6 @@ public class Game : MonoBehaviour
             else
                 Destroy(playerGameObjects[i].gameObject);
         }
-        var que = "";
-                            foreach(var q in _queue)
-                                que += q;
-                            Debug.Log(que);
         foreach (var player in _players)
         {
             player.playerMovement.OnPlayerMoved += (playerComponent, hex) => 
@@ -59,11 +55,11 @@ public class Game : MonoBehaviour
                 _map.MakeHexUnavailable(hex);
                 var queueCopy = new LinkedList<int>(_queue);
                 foreach (var playerNumber in queueCopy)
-                    if (_players[playerNumber].needSkeepMove)
+                    if (_players[playerNumber].needSkipMove)
                         {
                             _queue.AddLast(playerNumber);
                             _queue.RemoveFirst();
-                            _players[playerNumber].needSkeepMove = false;
+                            _players[playerNumber].needSkipMove = false;
                         }
                     else
                         break;
