@@ -34,7 +34,7 @@ public class DiceMovement : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
-                transform.position = new Vector3(hit.point.x, _cubeLiftingHeight, hit.point.z);
+                _rb.position = new Vector3(hit.point.x, _cubeLiftingHeight, hit.point.z);
             _rb.velocity = Vector3.zero;
         }
     }

@@ -19,9 +19,10 @@ public class PossibleHexChecker : MonoBehaviour
         if (xScore > possibleStepsCount)
             return false;
         var zScore = Mathf.Round(Mathf.Abs(hexPosition.z - playerPosition.z) / (Mathf.Sqrt(0.75f)/2));
-        if ((xScore == possibleStepsCount || 
-            (xScore <= possibleStepsCount && hex.name == "Finish")) && zScore <= possibleStepsCount)
+        if (xScore == possibleStepsCount && zScore <= possibleStepsCount)
             return (true);
+        if ((xScore + zScore)/2 <= possibleStepsCount && hex.name == "Finish")
+            return true;
         return (xScore + zScore)/2 == possibleStepsCount;
     }
 }
